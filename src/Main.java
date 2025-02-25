@@ -25,6 +25,7 @@ public class Main {
     advancedMathCourse.showStudentList();
 
     System.out.println("\n\n\nRemove some students\n\n");
+
     programmingCounse.removeStudent(10);
     programmingCounse.removeStudent(9999);
     technologyCourse.removeStudent(13);

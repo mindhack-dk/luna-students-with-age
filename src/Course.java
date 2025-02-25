@@ -23,19 +23,25 @@ public class Course {
   }
 
   public boolean removeStudent(int studentId) {
-    for (int i = 0; i < students.length; i++) {
-      if (students[i] != null && students[i].getStudentId() == studentId) {
-        students[i] = null;
-        return true;
+    boolean success = false;
+
+    for (int currentIndex = 0; currentIndex < students.length; currentIndex++) {
+      if (students[currentIndex] != null && students[currentIndex].getStudentId() == studentId) {
+        students[currentIndex] = null;
+        success = true;
+        // break;
       }
     }
-    return false;
+    return success;
   }
 
   public void showStudentList() {
     System.out.println("\n" + courseName.toUpperCase() + "\n");
-    for (int i = 0; i < students.length; i++)
-      if (students[i] != null)
-        System.out.println(students[i]);
+    for (int i = 0; i < students.length; i++) {
+      if (students[i] != null) {
+        Student s = students[i];
+        System.out.println(s.getStudentId() + ": " + s.getName() + ", " + s.getAge());
+      }
+    }
   }
 }
